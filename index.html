@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Action Language with Multiagent</title>
+    <link rel="icon" href="asset/ic-tab.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="message-wrapper">
+    </div>
+    <div class="main-wrapper">
+        <div class="main-container">
+            <span class="fonthuge fontbold">Action Language with Multiagent</span>
+            <span class="fontnormal">Project of Knowledge Representation and Reasoning</span>
+            <button class="btn-start fontnormal fontbold"><span class="ic-desc">Start</span><span class="ic-arrow"></span></button>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content-title">
+            <font class="fontbig"><b>Action Language</b> with <b>Multiagent</b></font>
+        </div>
+        <nav class="btn-menu"></nav>
+        <div class="members">
+            <div class="members-icon">
+                <img src="asset/il-member.svg">
+            </div>
+            <div class="members-desc fontbig">
+                <span>Group <b>Member</b></span>
+            </div>
+            <ul class="members-list">
+                <li style="--animation-order: 1;"><b>Tetiana Bakai</b></li>
+                <li style="--animation-order: 2;">Liu Jianyu</li>
+                <li style="--animation-order: 3;">Enggar Dwi Prihastomo</li>
+                <li style="--animation-order: 4;">Burak Can Buyukbas</li>
+                <li style="--animation-order: 5;">Yevhen Skhola</li>
+                <li style="--animation-order: 6;">Yi Shuang</li>
+            </ul>
+        </div>
+        <div class="input-wrapper">
+            <div class="btn-load maintable">
+                <label class="mainrow">
+                    <input type="file" accept=".txt" class="file-scenario">
+                    <div class="dotswrapper maincell mainmiddle">
+                        <div class="dots"></div><div class="dots"></div><div class="dots"></div>
+                    </div>
+                    <div class="ic-load maincell mainmiddle"></div>
+                    <div class="desc-load maincell mainmiddle">Load <b>Scenario</b></div>
+                </label>
+            </div>
+            <div class="btn-save maintable">
+                <div class="dots-wrapper maincell mainmiddle">
+                    <div class="dots"></div><div class="dots"></div><div class="dots"></div>
+                </div>
+                <div class="ic-save maincell mainmiddle"></div>
+                <div class="desc-save maincell mainmiddle">Save <b>Scenario</b></div>
+            </div>
+            <div class="input-field">
+                <textarea class="input-scenario fontsmall" placeholder="Write your scenario here ..."></textarea>
+                <button class="btn-clear fontbold fontsmall">Clear</button>
+                <div class="btn-help"><span class="question-mark fontbig fontbold">?</span>
+                    <span class="help-header fontbold" style="--animation-order: 1;">Enter Scenario in AR representation as below:</span>
+                    <ul class="help-list">
+                        <li style="--animation-order: 2;">INITIALLY α</li>
+                        <li style="--animation-order: 3;">α AFTER (Ac, Ag) / (Ac BY Ag)</li>
+                        <li style="--animation-order: 4;">ALWAYS α</li>
+                        <li style="--animation-order: 5;">Ac BY Ag CAUSES α IF π</li>
+                        <li style="--animation-order: 6;">Ac BY Ag RELEASES ƒ IF π</li>
+                        <li style="--animation-order: 7;">IMPOSSIBLE Ac BY Ag IF π</li>
+                    </ul>
+                </div>
+                <button class="btn-submit fontbold fontbig">
+                    Submit <span class="ic-arrow-green arrowbig"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="result-canvas">
+        <div class="modal-canvas">
+            <div class="modal-wrapper">
+                <span class="modal-header fontsmall fontbold">
+                    List of Possible Initial States
+                </span>
+                <div class="modal-content fontsmall"></div>
+                <div class="modal-footer">
+                    <button class="btn-ok fontsmall fontbold"><span class="ic-desc">OK</span><span class="ic-arrow"></span></button>
+                </div>
+            </div>
+        </div>
+        <div class="result-content">
+            <div class="relative">
+                <div class="listinfo">
+                    <span class="listinfo-desc fontbold fonttiny">List of Agents</span>
+                </div>
+                <div class="listinfo-before"></div>
+                <div class="btn-close"><span class="icon-close"></span></div>
+                <div class="agents list-wrapper" style="--animation-order: 1;">
+                    <div class="blue-dot"></div><div class="fontbold fonttiny">List of Agents</div>
+                </div>
+                <div class="fluents list-wrapper" style="--animation-order: 2;">
+                    <div class="green-dot"></div><div class="fontbold fonttiny">List of Fluents</div>
+                </div>
+                <div class="actions list-wrapper" style="--animation-order: 3;">
+                    <div class="yellow-dot"></div><div class="fontbold fonttiny">List of Actions</div>
+                </div>
+                <div class="calculations list-wrapper" style="--animation-order: 4;">
+                    <div class="grey-dot"></div><div class="fontbold fonttiny">Calculations</div>
+
+                </div>
+                <span class="query fontbold">Query</span>
+            </div>
+            <div class="query-wrapper">
+                <input type="text" class="input-query fontsmall" placeholder="Write your query here ...">
+                <div class="help-info">
+                    <span class="fontbold fonttiny">Enter query as below (Necessary/Accessible/Ever):</span>
+                    <ul class="help-query-list fonttiny">
+                        <li>Executable <b>(Ac, Ag)</b> / <b>(Ac </b> By <b>Ag) </b>From<b> σ</b></li>
+                        <li>Accessible <b>α</b> From <b>σi</b></li>
+                        <li><b>σi</b> after <b>(Ac, Ag)</b> / <b>(Ac </b> By <b>Ag) </b>From<b> σ</b></li>
+                        <li>Ag involved in <b>(Ac, Ag)</b> / <b>(Ac </b> By <b>Ag)</b></li>
+                    </ul>
+                </div>
+                <div class="btn-help-query fontnormal fontbold">?</div>
+            </div>
+            <button class="btn-result">
+                <span class="fontbig">See <b>Result</b></span><span class="ic-arrow-green"></span>
+            </button>
+            <button class="btn-back">
+                <span class="ic-arrow-green reverse"></span><span class="fontbig">Result:</span><span class="result-capt fontbold fontbig"></span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/CaretPosition.js"></script>
+<script src="js/UIController.js"></script>
+<script src="js/AlgorithmController.js"></script>
+<script src="js/MainController.js"></script>
